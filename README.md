@@ -24,5 +24,4 @@ PM.03.MDK.03.OVP-Lab/
 ```
 
  ## 🔗 Ссылка на лабораторные работы
-
-[Открыть GitHub Pages]([https://olgakraven.github.io/PM.03.MDK.03.OVP-Lab/])
+[Открыть GitHub Pages]([https://username.github.io/repository-name/](https://olgakraven.github.io/PM.03.MDK.03.OVP-Lab/))
