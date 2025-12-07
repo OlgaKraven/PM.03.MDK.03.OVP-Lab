@@ -1,0 +1,1563 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+        <link rel="next" href="lab2/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Лабораторная работа №1 - Методические рекомендации по лабораторным работам по дисциплине "Оптимизация веб-приложений"</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/extra.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#no1-devtools-http-rest-json-postman" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="." title="Методические рекомендации по лабораторным работам по дисциплине &#34;Оптимизация веб-приложений&#34;" class="md-header__button md-logo" aria-label="Методические рекомендации по лабораторным работам по дисциплине "Оптимизация веб-приложений"" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Методические рекомендации по лабораторным работам по дисциплине "Оптимизация веб-приложений"
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Лабораторная работа №1
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="Методические рекомендации по лабораторным работам по дисциплине &#34;Оптимизация веб-приложений&#34;" class="md-nav__button md-logo" aria-label="Методические рекомендации по лабораторным работам по дисциплине "Оптимизация веб-приложений"" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Методические рекомендации по лабораторным работам по дисциплине "Оптимизация веб-приложений"
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лабораторные работы
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Лабораторные работы
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лабораторная работа №1
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лабораторная работа №1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Теория
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Теория">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-devtools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1. Что такое DevTools
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2. Пользовательские запросы
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3. Коды ответов
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-rest-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4. REST API
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-json" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.5. JSON
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16-postman" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.6. Postman
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Задание
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Задание">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1. Требуемые инструменты
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2. Первичный анализ запросов
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3. Детальный разбор одного запроса
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4. Эксперименты с запросами
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5. Работа с параметрами
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.6. Массовые запросы
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#27" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.7. Заголовки и ответы
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#28" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.8. Оптимизация запросов
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#29-api-postman" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.9. Работа с API через Postman
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#210-devtools-postman" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.10. Сравнение DevTools и Postman
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Контрольные вопросы
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Чек-лист для самопроверки
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Скачать шаблон отчёта
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lab2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лабораторная работа №2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lab3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лабораторная работа №3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lab4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лабораторная работа №4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lab5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лабораторная работа №5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lab6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лабораторная работа №6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lab7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лабораторная работа №7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lab8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лабораторная работа №8
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lab9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лабораторная работа №9
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Теория
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Теория">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-devtools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1. Что такое DevTools
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2. Пользовательские запросы
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3. Коды ответов
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-rest-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4. REST API
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-json" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.5. JSON
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16-postman" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.6. Postman
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Задание
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Задание">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1. Требуемые инструменты
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2. Первичный анализ запросов
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3. Детальный разбор одного запроса
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4. Эксперименты с запросами
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5. Работа с параметрами
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.6. Массовые запросы
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#27" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.7. Заголовки и ответы
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#28" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.8. Оптимизация запросов
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#29-api-postman" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.9. Работа с API через Postman
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#210-devtools-postman" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.10. Сравнение DevTools и Postman
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Контрольные вопросы
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Чек-лист для самопроверки
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Скачать шаблон отчёта
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="no1-devtools-http-rest-json-postman">Лабораторная работа №1 - Пользовательские запросы в веб-приложении (DevTools, HTTP, REST, JSON, Postman)</h1>
+<h2 id="1">1. Теория</h2>
+<h3 id="11-devtools">1.1. Что такое DevTools</h3>
+<p><strong>DevTools (Developer Tools)</strong> — встроенные инструменты разработчика браузера (Chrome, Firefox, Edge, Safari).<br />
+Открытие: <strong>F12</strong>.</p>
+<p>Основные панели:</p>
+<ul>
+<li><strong>Elements</strong> — DOM и визуальная структура страницы.  </li>
+<li><strong>Console</strong> — ошибки, логи, выполнение JS.  </li>
+<li><strong>Network</strong> — анализ запросов, коды, заголовки, время.  </li>
+<li><strong>Performance</strong> — измерение скорости работы страницы.  </li>
+<li><strong>Device mode</strong> — проверка адаптивности интерфейса.  </li>
+<li><strong>Security</strong> — HTTPS, сертификаты.  </li>
+<li><strong>Memory</strong> — утечки памяти и использование ресурсов.</li>
+</ul>
+<p><strong>Пример интерфейса DevTools:</strong></p>
+<p><img alt="DevTools" loading="lazy" src="assets/image/devtools-open.png" /></p>
+<hr />
+<h3 id="12">1.2. Пользовательские запросы</h3>
+<p>Пользовательские запросы — это <strong>HTTP-запросы</strong> (GET, POST и др.), которые браузер отправляет при работе с веб-приложением.</p>
+<p>Основные характеристики запроса:</p>
+<ul>
+<li>метод (GET/POST/PUT/DELETE/…)  </li>
+<li>URL и параметры  </li>
+<li>заголовки (headers)  </li>
+<li>тело запроса / ответа  </li>
+<li>время выполнения  </li>
+<li>код ответа  </li>
+</ul>
+<p><strong>Оптимизация запросов:</strong></p>
+<ul>
+<li>уменьшение количества обращений;  </li>
+<li>сокращение объёма передаваемых данных;  </li>
+<li>кэширование;  </li>
+<li>пагинация и фильтрация;  </li>
+<li>использование правильных HTTP-методов и заголовков.</li>
+</ul>
+<p><strong>Основные HTTP-методы</strong></p>
+<table>
+<thead>
+<tr>
+<th>Метод</th>
+<th>CRUD</th>
+<th>Назначение</th>
+<th>Особенности</th>
+<th>Пример</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>Read</td>
+<td>Получение данных</td>
+<td>Параметры в URL, кэшируемый, не меняет данные</td>
+<td><code>/users?id=5</code></td>
+</tr>
+<tr>
+<td>POST</td>
+<td>Create</td>
+<td>Создание ресурса</td>
+<td>Данные в теле, изменяет состояние</td>
+<td>Регистрация, заказ</td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>Update</td>
+<td>Полное обновление</td>
+<td>Заменяет весь объект</td>
+<td>Обновить профиль</td>
+</tr>
+<tr>
+<td>PATCH</td>
+<td>Update</td>
+<td>Частичное обновление</td>
+<td>Меняет только указанные поля</td>
+<td>Сменить только email</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>Delete</td>
+<td>Удаление ресурса</td>
+<td>Обычно <code>200 OK</code> или <code>204 No Content</code></td>
+<td>Удалить товар</td>
+</tr>
+<tr>
+<td>HEAD</td>
+<td>—</td>
+<td>Только заголовки</td>
+<td>Проверка наличия / размера / даты</td>
+<td>Проверка <code>Last-Modified</code></td>
+</tr>
+<tr>
+<td>OPTIONS</td>
+<td>—</td>
+<td>Поддерживаемые методы</td>
+<td>Preflight (CORS)</td>
+<td>Доступность POST/PUT</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="13">1.3. Коды ответов</h3>
+<ul>
+<li><strong>1xx</strong> — информационные (например, <code>100 Continue</code>).  </li>
+<li><strong>2xx</strong> — успешные (<code>200 OK</code>, <code>201 Created</code>, <code>204 No Content</code>).  </li>
+<li><strong>3xx</strong> — перенаправления (<code>301</code>, <code>302</code>, <code>304 Not Modified</code>).  </li>
+<li><strong>4xx</strong> — ошибки клиента (<code>400</code>, <code>401</code>, <code>403</code>, <code>404</code>).  </li>
+<li><strong>5xx</strong> — ошибки сервера (<code>500</code>, <code>502</code>, <code>503</code>, <code>504</code>).  </li>
+</ul>
+<hr />
+<h3 id="14-rest-api">1.4. REST API</h3>
+<p><strong>REST</strong> — архитектурный стиль взаимодействия с ресурсами по HTTP.</p>
+<p>Принципы:</p>
+<ul>
+<li>клиент–сервер;  </li>
+<li>отсутствие состояния (stateless);  </li>
+<li>единообразный интерфейс;  </li>
+<li>работа с ресурсами (уникальные URL);  </li>
+<li>часто используется формат <strong>JSON</strong>.</li>
+</ul>
+<hr />
+<h3 id="15-json">1.5. JSON</h3>
+<p><strong>JSON</strong> — лёгкий текстовый формат обмена данными (объекты, массивы, строки, числа, boolean, <code>null</code>).</p>
+<p>Пример ответа:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;userId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sunt aut facere...&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;body&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;quia et suscipit...&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h3 id="16-postman">1.6. Postman</h3>
+<p><strong>Postman</strong> — инструмент для работы с API:</p>
+<ul>
+<li>создание и отправка запросов;</li>
+<li>анализ ответов;</li>
+<li>сохранение коллекций;</li>
+<li>автотесты;</li>
+<li>совместная работа.</li>
+</ul>
+<p><img alt="Postman" loading="lazy" src="assets/image/postman-overview.png" /></p>
+<hr />
+<h2 id="2">2. Задание</h2>
+<h3 id="21">2.1. Требуемые инструменты</h3>
+<ul>
+<li>браузер (Chrome / Firefox / Edge / Яндекс.Браузер);</li>
+<li>DevTools → вкладка <strong>Network</strong> (режим Online, без ограничения скорости или с 4G-профилем).</li>
+</ul>
+<p><img alt="Network настройки" loading="lazy" src="assets/image/network-proper-setup.png" /></p>
+<hr />
+<h3 id="22">2.2. Первичный анализ запросов</h3>
+<ol>
+<li>
+<p>Откройте DevTools (<strong>F12</strong>) → вкладка <strong>Network</strong>.</p>
+</li>
+<li>
+<p>Загрузите страницу:</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code>https://jsonplaceholder.typicode.com/posts
+</code></pre></div>
+<ol>
+<li>
+<p>Зафиксируйте в таблице: метод, URL, код ответа, размер данных, время загрузки.</p>
+</li>
+<li>
+<p>Сделайте скриншот списка запросов.</p>
+</li>
+</ol>
+<p><img alt="Network table" loading="lazy" src="assets/image/network-table.png" /></p>
+<hr />
+<h3 id="23">2.3. Детальный разбор одного запроса</h3>
+<p>Выберите любой запрос и опишите:</p>
+<ul>
+<li>метод;</li>
+<li>URL и параметры;</li>
+<li>заголовки (Request Headers / Response Headers);</li>
+<li>тело ответа (Response / Preview);</li>
+<li>код ответа;</li>
+<li>время выполнения.</li>
+</ul>
+<p>Сравните его с другим запросом и сделайте вывод.</p>
+<p><img alt="request-detail" loading="lazy" src="assets/image/request-detail.png" /></p>
+<hr />
+<h3 id="24">2.4. Эксперименты с запросами</h3>
+<p>Выполните в консоли:</p>
+<div class="highlight"><pre><span></span><code><span class="nx">fetch</span><span class="p">(</span><span class="s2">&quot;https://jsonplaceholder.typicode.com/posts/1&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">res</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">())</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">data</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
+</code></pre></div>
+<p>Проанализируйте запрос во вкладке <strong>Network</strong>.
+Сравните:</p>
+<ul>
+<li><code>GET /posts</code> (все посты);</li>
+<li><code>GET /posts/1</code> (один пост).</li>
+</ul>
+<p>Сделайте выводы по:</p>
+<ul>
+<li>размеру ответа;</li>
+<li>времени загрузки;</li>
+<li>количеству записей.</li>
+</ul>
+<hr />
+<h3 id="25">2.5. Работа с параметрами</h3>
+<ol>
+<li>Откройте в браузере:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>https://jsonplaceholder.typicode.com/posts?userId=1
+</code></pre></div>
+<ol>
+<li>
+<p>Сравните с <code>https://jsonplaceholder.typicode.com/posts</code>:</p>
+</li>
+<li>
+<p>сколько объектов вернулось;</p>
+</li>
+<li>размер ответа;</li>
+<li>время загрузки.</li>
+</ol>
+<p>Сделайте вывод, как параметры помогают <strong>уменьшить объём данных</strong>.</p>
+<hr />
+<h3 id="26">2.6. Массовые запросы</h3>
+<p>Откройте несколько URL одновременно:</p>
+<ul>
+<li><code>/posts/1</code></li>
+<li><code>/posts/2</code></li>
+<li><code>/posts/3</code></li>
+</ul>
+<p>Зафиксируйте:</p>
+<ul>
+<li>как меняется время отклика;</li>
+<li>как браузер параллелит запросы;</li>
+<li>нет ли избыточных запросов.</li>
+</ul>
+<hr />
+<h3 id="27">2.7. Заголовки и ответы</h3>
+<ol>
+<li>
+<p>Во вкладке <strong>Headers</strong> выпишите не менее 5 ключевых заголовков, например:</p>
+</li>
+<li>
+<p><code>Content-Type</code></p>
+</li>
+<li><code>Cache-Control</code></li>
+<li><code>ETag</code></li>
+<li><code>Date</code></li>
+<li>
+<p><code>Server</code></p>
+</li>
+<li>
+<p>Сравните вкладки <strong>Preview</strong> и <strong>Response</strong>:</p>
+</li>
+<li>
+<p>чем они отличаются по представлению данных;</p>
+</li>
+<li>в каких случаях удобнее использовать Preview, а в каких — Response.</li>
+</ol>
+<hr />
+<h3 id="28">2.8. Оптимизация запросов</h3>
+<p>Сравните ответы:</p>
+<table>
+<thead>
+<tr>
+<th>Запрос</th>
+<th>Размер ответа</th>
+<th>Время загрузки</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/posts</code></td>
+<td>…</td>
+<td>…</td>
+</tr>
+<tr>
+<td><code>/posts?userId=1</code></td>
+<td>…</td>
+<td>…</td>
+</tr>
+<tr>
+<td><code>/posts/1</code></td>
+<td>…</td>
+<td>…</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Предложите меры оптимизации:</strong></p>
+<ul>
+<li>пагинация (ограничение количества записей на страницу);</li>
+<li>фильтрация (по <code>userId</code>, статусам и т.п.);</li>
+<li>уменьшение размера ответа (убрать лишние поля);</li>
+<li>кэширование на клиенте и сервере;</li>
+<li>использование правильных заголовков (<code>Cache-Control</code>, <code>ETag</code> и т.д.).</li>
+</ul>
+<hr />
+<h3 id="29-api-postman">2.9. Работа с API через Postman</h3>
+<ol>
+<li>Перейдите на сайт:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>https://www.postman.com/
+</code></pre></div>
+<ol>
+<li>
+<p>Выполните:</p>
+</li>
+<li>
+<p><code>GET /posts</code></p>
+</li>
+<li><code>GET /posts/1</code></li>
+</ol>
+<p>Сравните ответы.</p>
+<ol>
+<li>Выполните <strong>POST</strong> <code>/posts</code> с JSON-телом:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Пост через Postman&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;body&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Текст поста&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;userId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span>
+<span class="p">}</span>
+</code></pre></div>
+<ol>
+<li>
+<p>Выполните:</p>
+</li>
+<li>
+<p><strong>PUT</strong> <code>/posts/1</code> — полное обновление ресурса;</p>
+</li>
+<li><strong>PATCH</strong> <code>/posts/1</code> — частичное обновление (изменить только один-два поля).</li>
+</ol>
+<p>Объясните, чем отличаются результаты.</p>
+<ol>
+<li>
+<p>Выполните <strong>DELETE</strong> <code>/posts/1</code> и зафиксируйте:</p>
+</li>
+<li>
+<p>код ответа;</p>
+</li>
+<li>тело ответа (если есть).</li>
+</ol>
+<p><img alt="Postman send" loading="lazy" src="assets/image/postman-send.png" /></p>
+<hr />
+<h3 id="210-devtools-postman">2.10. Сравнение DevTools и Postman</h3>
+<p>Сделайте таблицу или краткое сравнительное описание:</p>
+<ul>
+<li>
+<p><strong>DevTools</strong></p>
+</li>
+<li>
+<p>анализ реальных запросов страницы;</p>
+</li>
+<li>проверка производительности, кэширования;</li>
+<li>
+<p>работа в контексте открытого сайта.</p>
+</li>
+<li>
+<p><strong>Postman</strong></p>
+</li>
+<li>
+<p>ручное конструирование запросов;</p>
+</li>
+<li>сохранение коллекций;</li>
+<li>тесты и скрипты;</li>
+<li>работа с авторизацией и токенами.</li>
+</ul>
+<p>Сделайте вывод: <strong>когда удобнее DevTools, а когда Postman</strong>.</p>
+<hr />
+<h2 id="3">3. Контрольные вопросы</h2>
+<ol>
+<li>Что такое DevTools и какие задачи решают вкладки Elements, Console и Network?</li>
+<li>Как открыть DevTools и какие настройки вкладки Network важны для замеров производительности?</li>
+<li>Перечислите основные части HTTP-запроса (метод, URL/параметры, заголовки, тело) и их назначение.</li>
+<li>Чем отличаются методы GET, POST, PUT, PATCH и DELETE? Приведите по одному практическому примеру.</li>
+<li>Для чего используются методы HEAD и OPTIONS и где встречается preflight-запрос?</li>
+<li>Расскажите о группах кодов ответов (1xx–5xx) и приведите примеры для 200, 301/302, 304, 404, 500.</li>
+<li>Что такое REST и как ресурс в REST представлен на уровне URL?</li>
+<li>Какие типы данных поддерживает JSON? Приведите короткий пример JSON-объекта и массива.</li>
+<li>В чём отличие вкладок Preview и Response в карточке запроса DevTools?</li>
+<li>Какие заголовки чаще всего анализируются при оптимизации (например, <code>Content-Type</code>, <code>Cache-Control</code>, <code>ETag</code>, <code>Authorization</code>)?</li>
+<li>Какие приёмы снижения нагрузки на сеть можно использовать для API: пагинация, фильтрация, кэширование и др.?</li>
+<li>Чем работа с API в Postman отличается от анализа запросов в DevTools, и когда уместен каждый инструмент?</li>
+</ol>
+<hr />
+<h2 id="-">Чек-лист для самопроверки</h2>
+<table>
+<thead>
+<tr>
+<th>Баллы</th>
+<th>Критерии выполнения</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>7</strong></td>
+<td>Выполнены <strong>все пункты практики</strong>:<br><br>– первичный анализ запросов (таблица + скриншоты);<br>– детальный разбор + сравнение запросов;<br>– работа с параметрами, массовые запросы, заголовки (5+);<br>– таблица оптимизации (<code>/posts</code>, <code>/posts?userId=1</code>, <code>/posts/1</code>);<br>– эксперименты в Postman (GET, POST, PUT, PATCH, DELETE);<br>– сравнение DevTools и Postman;<br>– все обязательные скриншоты (Network, Console, Postman);<br>– есть итоговые выводы и рекомендации;<br>– аккуратное оформление: таблицы, структурированные заголовки, выводы.</td>
+</tr>
+<tr>
+<td><strong>6</strong></td>
+<td>Выполнена <strong>полная практическая часть</strong> в DevTools (таблицы, скриншоты, сравнения);<br>реализованы <strong>все виды запросов в Postman</strong>: GET, POST, PUT, PATCH, DELETE;<br>есть сравнение DevTools и Postman;<br>составлены рекомендации по оптимизации (5–7 мер);<br>оформление есть, но <strong>структура слабее</strong>: не всегда удачно выбраны заголовки, таблицы оформлены неаккуратно.</td>
+</tr>
+<tr>
+<td><strong>5</strong></td>
+<td>Выполнены основные шаги анализа запросов:<br>таблица с методами, URL, кодами ответа и временем;<br>есть сравнение <code>/posts</code> и <code>/posts/1</code>, работа с параметрами;<br>сделано 2–3 скриншота;<br>разобраны заголовки и показаны примеры запросов с параметрами;<br>примеры оптимизации приведены, но <strong>не оформлены отдельной таблицей</strong>;<br>в Postman реализованы только <strong>GET/POST</strong>.</td>
+</tr>
+<tr>
+<td><strong>3–4</strong></td>
+<td>Краткое описание DevTools и HTTP-запросов;<br>выполнен <strong>первичный анализ запросов</strong> (таблица: метод, URL, код ответа, размер, время);<br>сделан <strong>хотя бы один скриншот</strong> из DevTools;<br>есть разбор одного запроса, но <strong>без сравнений и выводов</strong>;<br>JSON/REST API упомянуты, но <strong>Postman не использован</strong> или использован формально.</td>
+</tr>
+<tr>
+<td><strong>1–2</strong></td>
+<td>Даны лишь <strong>отдельные ответы</strong> без общей структуры;<br>скриншоты отсутствуют или <strong>не соответствуют заданию</strong>;<br>теоретическая часть слабо раскрыта, практическая часть выполнена формально.</td>
+</tr>
+<tr>
+<td><strong>0</strong></td>
+<td>Работа выполнена <strong>с помощью ИИ</strong> (автоматически сгенерированные ответы без личных скриншотов и анализа);<br>отсутствует выполнение практических шагов, присутствует только копипаст из методических материалов.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_1">Скачать шаблон отчёта</h2>
+<p>👉 <strong><a href="template/LR1.docx">Скачать шаблон отчёта</a></strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["content.code.copy", "content.image.zoom", "navigation.top", "navigation.tracking", "toc.follow"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+      
+        <script src="js/mermaid-init.js"></script>
+      
+    
+  </body>
+</html>
