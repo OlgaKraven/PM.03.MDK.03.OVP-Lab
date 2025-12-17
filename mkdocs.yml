@@ -1,14 +1,20 @@
 site_name: Методические рекомендации по лабораторным работам по дисциплине "Оптимизация веб-приложений" 
 
 theme:
-  name: material
-  language: ru
-  features:
+   name: material
+   logo: assets/image/logo.png
+   favicon: assets/image/logo.png
+   language: ru
+   features:
     - content.code.copy     # кнопка "копировать"
     - content.image.zoom    # zoom картинок
     - navigation.top        # "наверх"
     - navigation.tracking   # подсветка активного пункта в правом TOC
     - toc.follow            # правый TOC следует за прокруткой
+plugins:
+- glightbox
+- search
+
 nav:
   
     - Лабораторные работы: 
@@ -22,13 +28,15 @@ nav:
       - Лабораторная работа №8: lab8.md
       - Лабораторная работа №9: lab9.md
     - Вопросы к зачету с оценкой: questions.md
+    - Требования к оформлению: requirements.md
 markdown_extensions:
   - admonition
   - attr_list
   - pymdownx.highlight
   - pymdownx.details
-  - pymdownx.emoji
   - pymdownx.tasklist
+  - md_in_html
+  - pymdownx.blocks.caption
   - pymdownx.superfences:
         custom_fences:
           - name: mermaid
@@ -40,3 +48,4 @@ extra_javascript:
 
 extra_css:
   - stylesheets/extra.css
+    
